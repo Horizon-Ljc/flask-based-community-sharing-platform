@@ -30,6 +30,7 @@ class Book(db.Model):
     updatetime = db.Column(db.DateTime, default = datetime.now, nullable=False, index=True)
     timestamp = db.Column(db.DateTime, default = datetime.now, nullable=False, index=True)
     cover = db.Column(db.String(255), default="", nullable=False)
+
     user_id = db.Column(db.Integer, db.ForeignKey(User.__tablename__+".id", 
         ondelete="CASCADE", onupdate="CASCADE"), nullable=False)
 

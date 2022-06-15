@@ -1,0 +1,64 @@
+{%extends "admin/base.html"%}
+{%block title%}
+测试 - {{site["name"]|upper}}
+{%endblock title%}
+
+{%block metas%}
+{{super()}}
+{%endblock metas%}
+{%block styles%}
+{%if config.get("DEBUG")%}
+{%include "_common-css.html"%}
+<link rel="stylesheet" href="{{url_for("static", filename="css/admin/start.css")}}">
+
+{%else%}
+<link rel="stylesheet" href="{{url_for("static", filename="dist/css/start.min.css")}}">
+{%endif%}
+
+{{super()}}
+{%endblock styles%}
+
+{%block navbar%}
+{%endblock navbar%}
+
+{%block content%}
+{#<link rel="stylesheet" href="../../../static/lib/editormd/css/editormd.logo.css">#}
+{#<link rel="stylesheet" href="../../../static/lib/editormd/css/editormd.preview.css">#}
+<link rel="stylesheet" href="../../../static/lib/editormd/css/editormd.min.css">
+ <!--z-index: number ：设置元素的堆叠顺序，number大的排在前面-->
+ <div id="md-content" >
+     <textarea name="content" placeholder="博客内容" style="display: none">
+
+     </textarea>
+
+  <h1>ha怎么回事hasda</h1>
+
+ </div>
+    <script type="text/javascript">
+     // 初始化markdown编辑器
+     var contentEditor
+     $(function() {
+         //md-content必须和页面区域的最外层div的id相同
+         contentEditor = editormd("md-content", {
+             // 在页面显示的宽度
+             width   : "100%",
+             // 高度
+             height  : 640,
+             // 单滚动条
+             syncScrolling : "single",
+             // lib资源的路径
+              path    : "../../../static/lib/editormd/lib"
+         });
+     });
+ </script>
+{#    ../../../static/lib/editormd/editormd.min.js#}
+    <script src="../../../static/lib/editormd/editormd.min.js"></script>
+{#    <script src="{{url_for("static", filename="lib/editormd/editormd.js")}}"></script>#}
+{%endblock content%}
+
+{%block scripts%}
+{{super()}}
+
+{%endblock scripts%}
+
+

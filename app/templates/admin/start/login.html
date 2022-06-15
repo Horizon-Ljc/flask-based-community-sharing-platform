@@ -57,10 +57,17 @@
                 <button type="submit" class="btn btn-primary btn-login">登录</button>
             </div>
             <div class="form-group">
+                <div style="float: left">
                 <label class="sign-remember">
                     <input class="checkbox-inline" type="checkbox"  name="remember" {%if form.remember.data%}checked="checked"{%endif%}>
                     <span>记住我</span>
                 </label>
+                </div>
+                <div style="text-align: right">
+                <label class="sign-login">
+                    <a href="{{url_for("admin.regist")}}">注册</a>
+                </label>
+                </div>
             </div>
         </form>
     </div>
