@@ -46,16 +46,17 @@
 
 {%for book, catalog in catalogs.items%}
     <div class="catalog-item">
-        <h3 class="catalog-info">
-            <a href="{{url_for("web.reader", id=book.id, catalog_id=catalog.id)}}" class="catalog-title">{{catalog.title}}</a>
-            <span class="color-9">{{catalog.first_publish|friendly_time}}</span>
-        </h3>
-        {%if catalog.abstract%}
-        <div class="abstract">
-            {{catalog.abstract}}
-        </div>
-        {%endif%}
-        <h5 class="from">来自书籍</h5>
+<!--        <h3 class="catalog-info">-->
+<!--            <a href="{{url_for("web.reader", id=book.id, catalog_id=catalog.id)}}" class="catalog-title">{{catalog.title}}</a>-->
+<!--            <span class="color-9">{{catalog.first_publish|friendly_time}}</span>-->
+<!--        </h3>-->
+
+<!--        {%if catalog.abstract%}-->
+<!--        <div class="abstract">-->
+<!--            {{catalog.abstract}}-->
+<!--        </div>-->
+<!--        {%endif%}-->
+        <h5 class="from">来自用户  {{book.user.username}}</h5>
         <div class="book-item">
             <div class="inner-book">
                 <div class="media-left">
@@ -80,6 +81,10 @@
                 </div>
             </div>
         </div>
+        <h3 class="catalog-info">
+<!--            <a href="{{url_for("web.reader", id=book.id, catalog_id=catalog.id)}}" class="catalog-title">{{catalog.title}}</a>-->
+            <span class="color-9">{{catalog.first_publish|friendly_time}}</span>
+        </h3>
     </div>
 {%endfor%}
 

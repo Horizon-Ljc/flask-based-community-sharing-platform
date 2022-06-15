@@ -2,10 +2,12 @@
 from flask import current_app, render_template, request, redirect, url_for, abort
 from flask_login import current_user
 from app.models.book import *
+from flask_login import login_required
 from app.web import web
 
 
 @web.route("/")
+@login_required
 def index():
     page = request.args.get("page", 1, type=int)
     per_page = current_app.config["PER_PAGE"]
