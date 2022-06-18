@@ -1,7 +1,7 @@
 #coding:utf-8
 
 class Config(object):
-    DEBUG = False
+    DEBUG = True
     SECRET_KEY = 'this is secret string'
 
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True

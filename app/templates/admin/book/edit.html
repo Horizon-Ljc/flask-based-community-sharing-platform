@@ -21,7 +21,7 @@
 </style>
 {{super()}}
 {%endblock styles%}
-书籍目录
+文章目录
 {%block navbar%}
 {%endblock navbar%}
 
@@ -111,6 +111,8 @@
 
 
 {%if config.get("DEBUG")%}
+<script src="{{url_for("static", filename="dist/js/edit.min.js")}}"></script>
+{%else%}
 {%include "_common-js.html"%}
 <script src="{{url_for("static", filename="asserts/bookeditor/plugins/bootstrap-treeview/bootstrap-treeview.js")}}"></script>
 <script src="{{url_for("static", filename="asserts/bookeditor/plugins/sortable/Sortable.js")}}"></script>
@@ -128,8 +130,6 @@
 <script src="{{url_for("static", filename="asserts/mousetrap/mousetrap.js")}}"></script>
 <script src="{{url_for("static", filename="asserts/bookeditor/bookeditor.js")}}"></script>
 <script src="{{url_for("static", filename="js/admin/edit.js")}}"></script>
-{%else%}
-<script src="{{url_for("static", filename="dist/js/edit.min.js")}}"></script>
 {%endif%}
 
 {{super()}}
