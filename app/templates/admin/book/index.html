@@ -29,7 +29,7 @@
         <div class="panel">
             <div class="panel-body book-panel">
                 <div class="tab-group clearfix">
-                    <a class="tab-item {%if tab != "draft"%}active{%endif%}" href="{{url_for("admin.index")}}">我的书籍</a>
+                    <a class="tab-item {%if tab != "draft"%}active{%endif%}" href="{{url_for("admin.index")}}">我的文章</a>
                     <a class="tab-item {%if tab=="draft"%}active{%endif%}" href="{{url_for("admin.index", tab="draft")}}">草稿{%if count_draft%} <span class="count">{{count_draft}}</span>{%endif%}</a>
                 </div>
                 {%if books.items%}
@@ -49,8 +49,8 @@
                 {%else%}
                 <div class="no-content">
                     <p class="msg">您还没有任何书籍，请先创建书籍</p>
-                    <p>
-                    <a class="btn btn-book" href="{{url_for("admin.book_new")}}">开始写书</a>
+                    <p>开始写书
+                    <a class="btn btn-book" href="{{url_for("admin.book_new")}}">新建文章</a>
                     </p>
                 </div>
                 {%endif%}

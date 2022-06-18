@@ -26,10 +26,6 @@
         {%include "admin/_head.html"%}
     <div class="main-content">
         <div class="book-form">
-            <ol class="breadcrumb">
-                <li><a href="{{url_for("admin.index")}}">书籍</a></li>
-                <li class="active">设置："{{book.name}}"</li>
-            </ol> 
  
         <div class="panel">
             <div class="panel-body book-panel">
@@ -62,7 +58,7 @@
                     {{form.hidden_tag()}}
                     <div class="form-group ">
                         <div class="row">
-                        <label class="col-sm-2 control-label" for="name">书名</label>
+                        <label class="col-sm-2 control-label" for="name">文章名称</label>
                         <div class="col-sm-10">
                             <input class="form-control {%if form.name.errors%}input-error{%endif%}" type="text" name="name" value="{%if form.name.data%}{{form.name.data}}{%else%}{{book.name}}{%endif%}">
                             {%for error in form.name.errors%}

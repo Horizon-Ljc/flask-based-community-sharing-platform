@@ -26,10 +26,7 @@
         {%include "admin/_head.html"%}
     <div class="main-content">
         <div class="user-form">
-        <ol class="breadcrumb">
-            <li><a href="{{url_for("admin.user")}}">用户</a></li>
-            <li class="active">{{user.nickname}}</li>
-        </ol> 
+
 
         <div class="panel">
             <div class="panel-body user-panel">
@@ -58,7 +55,7 @@
                 </div>
 
                 <div class="section">
-                <h3 class="title">基础设置</h3>
+                <h3 class="title">基本信息设置</h3>
                 <form method="post">
                     {{form.hidden_tag()}}
                     <div class="form-group">
@@ -73,7 +70,7 @@
                     <div class="form-group">
                         <div class="row">
                         <label class="col-sm-2 control-label" for="nickname">昵称</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-10" style="width: 250px">
                             <input class="form-control {%if form.nickname.errors%}input-error{%endif%}" type="text" name="nickname" value="{%if form.nickname.data%}{{form.nickname.data}}{%else%}{{user.nickname}}{%endif%}">
                             {%for error in form.nickname.errors%}
                             <div class="input-error-info">{{error}}</div>
@@ -89,12 +86,12 @@
                         </div>
                     </div>
                 </form>
-                <form  class="password-form">
+                <form  class="password-form" style="padding-top: 20px;">
                     <div class="form-group">
                         <div class="row">
                         <label class="col-sm-2 control-label" for="password">密码</label>
                         <div class="col-sm-10">
-                            <input class="form-control password" type="password" name="password" value="">
+                            <input class="form-control password" type="password" name="password" value="" >
                             <div class="btn-group">
                             <a id="confirm" class="btn btn-primary confirm" href="javascript:;">确定</a>
                             <a id="change" class="btn btn-default" href="javascript:;">修改密码</a>
