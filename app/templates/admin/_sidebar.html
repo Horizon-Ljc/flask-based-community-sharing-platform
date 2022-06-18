@@ -10,7 +10,15 @@
             <ul class="nav">
                 <li {%if request.endpoint=="admin.index"%}class="active"{%endif%}><a href="{{url_for("admin.index")}}">
                     <span class="fa fa-book"></span>
-                    书籍
+                    文章
+                </a></li>
+                <li><a href="{{url_for("admin.user_detail", id=current_user.id)}}">
+                    <span class="fa fa-address-book"></span>
+                    个人中心
+                </a></li>
+                <li><a href="{{url_for("admin.logout")}}">
+                    <span class="fa fa-mail-reply"></span>
+                    退出
                 </a></li>
                 {%if current_user.username == "myroot" %}
                 <li {%if request.endpoint=="admin.user"%}class="active"{%endif%}><a href="{{url_for("admin.user")}}">

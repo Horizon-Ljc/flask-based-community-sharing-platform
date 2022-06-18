@@ -1,6 +1,6 @@
 {%extends "admin/base.html"%}
 {%block title%}
-创建书籍 - {{site["name"]|upper}}
+创建文章 - {{site["name"]|upper}}
 {%endblock title%}
 
 {%block metas%}
@@ -27,13 +27,13 @@
     <div class="main-content">
         <div class="book-form">
             <ol class="breadcrumb">
-                <li><a href="{{url_for("admin.index")}}">书籍</a></li>
-                <li class="active">创建书籍</li>
+                <li><a href="{{url_for("admin.index")}}">文章</a></li>
+                <li class="active">创建文章</li>
             </ol> 
         <div class="panel">
             <div class="panel-body book-panel">
 
-                <h3 class="title" >创建书籍</h3>
+                <h3 class="title" >创建文章</h3>
 
                 <form id="new-book" action="{{url_for("admin.book_new")}}" method="post">
                     {{form.hidden_tag()}}
